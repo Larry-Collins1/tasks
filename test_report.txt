@@ -8,27 +8,677 @@ Browserslist: caniuse-lite is outdated. Please run:
 PASS src/nested.test.ts
 PASS src/arrays.test.ts
 PASS src/objects.test.ts
-PASS src/HtmlCss.test.tsx
-PASS src/functions.test.ts
-PASS src/text.test.tsx
-PASS src/App.test.tsx
-----------------|---------|----------|---------|---------|-------------------
-File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-----------------|---------|----------|---------|---------|-------------------
-All files       |   99.43 |    95.77 |     100 |   99.39 |                   
- src            |   99.43 |    95.77 |     100 |   99.39 |                   
-  App.tsx       |     100 |      100 |     100 |     100 |                   
-  arrays.ts     |     100 |      100 |     100 |     100 |                   
-  functions.ts  |     100 |      100 |     100 |     100 |                   
-  nested.ts     |     100 |    95.23 |     100 |     100 | 249               
-  objects.ts    |   97.22 |    85.71 |     100 |   97.22 | 38                
- src/interfaces |       0 |        0 |       0 |       0 |                   
-  answer.ts     |       0 |        0 |       0 |       0 |                   
-  question.ts   |       0 |        0 |       0 |       0 |                   
-----------------|---------|----------|---------|---------|-------------------
+FAIL src/components/StartAttempt.test.tsx
+  ● StartAttempt Component tests › Clicking Mulligan increases attempts
 
-Test Suites: 7 passed, 7 total
-Tests:       48 passed, 48 total
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: 3
+    Received: 5
+
+      65 |         mulliganButton.click();
+      66 |         const attemptNumberLater = extractDigits(screen.getByText(/(\d+)/));
+    > 67 |         expect(attemptNumber + 1).toEqual(attemptNumberLater);
+         |                                   ^
+      68 |     });
+      69 |     test("Clicking Mulligan twice increases attempts by two", () => {
+      70 |         const attemptNumber: number =
+
+      at Object.<anonymous> (src/components/StartAttempt.test.tsx:67:35)
+
+  ● StartAttempt Component tests › Clicking Mulligan twice increases attempts by two
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: 2
+    Received: 6
+
+      76 |         mulliganButton.click();
+      77 |         const attemptNumberLater = extractDigits(screen.getByText(/(\d+)/));
+    > 78 |         expect(attemptNumber + 2).toEqual(attemptNumberLater);
+         |                                   ^
+      79 |     });
+      80 |     test("Clicking Start Quiz decreases attempts", () => {
+      81 |         const attemptNumber: number =
+
+      at Object.<anonymous> (src/components/StartAttempt.test.tsx:78:35)
+
+  ● StartAttempt Component tests › Clicking Start, Stop, Mulligan sets attempts to original
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: 2
+    Received: 4
+
+      145 |         const attemptNumberLatest: number =
+      146 |             extractDigits(screen.getByText(/(\d+)/)) || 0;
+    > 147 |         expect(attemptNumber).toEqual(attemptNumberLatest);
+          |                               ^
+      148 |     });
+      149 |     test("Cannot click start quiz when out of attempts", () => {
+      150 |         // Given the buttons and initial attempt number...
+
+      at Object.<anonymous> (src/components/StartAttempt.test.tsx:147:31)
+
+FAIL src/components/TwoDice.test.tsx
+  ● StartAttempt Component tests › Clicking Mulligan increases attempts
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: 3
+    Received: 5
+
+      65 |         mulliganButton.click();
+      66 |         const attemptNumberLater = extractDigits(screen.getByText(/(\d+)/));
+    > 67 |         expect(attemptNumber + 1).toEqual(attemptNumberLater);
+         |                                   ^
+      68 |     });
+      69 |     test("Clicking Mulligan twice increases attempts by two", () => {
+      70 |         const attemptNumber: number =
+
+      at Object.<anonymous> (src/components/StartAttempt.test.tsx:67:35)
+
+  ● StartAttempt Component tests › Clicking Mulligan twice increases attempts by two
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: 2
+    Received: 6
+
+      76 |         mulliganButton.click();
+      77 |         const attemptNumberLater = extractDigits(screen.getByText(/(\d+)/));
+    > 78 |         expect(attemptNumber + 2).toEqual(attemptNumberLater);
+         |                                   ^
+      79 |     });
+      80 |     test("Clicking Start Quiz decreases attempts", () => {
+      81 |         const attemptNumber: number =
+
+      at Object.<anonymous> (src/components/StartAttempt.test.tsx:78:35)
+
+  ● StartAttempt Component tests › Clicking Start, Stop, Mulligan sets attempts to original
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: 2
+    Received: 4
+
+      145 |         const attemptNumberLatest: number =
+      146 |             extractDigits(screen.getByText(/(\d+)/)) || 0;
+    > 147 |         expect(attemptNumber).toEqual(attemptNumberLatest);
+          |                               ^
+      148 |     });
+      149 |     test("Cannot click start quiz when out of attempts", () => {
+      150 |         // Given the buttons and initial attempt number...
+
+      at Object.<anonymous> (src/components/StartAttempt.test.tsx:147:31)
+
+PASS src/bad-components/ChooseTeam.test.tsx
+PASS src/bad-components/DoubleHalf.test.tsx
+FAIL src/HtmlCss.test.tsx
+  ● Console
+
+    console.log
+      red
+
+      at ColorPreview (src/bad-components/ColoredBox.tsx:25:13)
+
+    console.log
+      red
+
+      at ColorPreview (src/bad-components/ColoredBox.tsx:25:13)
+
+    console.log
+      red
+
+      at ColorPreview (src/bad-components/ColoredBox.tsx:25:13)
+
+    console.log
+      red
+
+      at ColorPreview (src/bad-components/ColoredBox.tsx:25:13)
+
+    console.log
+      red
+
+      at ColorPreview (src/bad-components/ColoredBox.tsx:25:13)
+
+    console.log
+      red
+
+      at console.<anonymous> (node_modules/jest-mock/build/index.js:850:25)
+
+  ● Some HTML Elements are added. › There is a header
+
+    TestingLibraryElementError: Found multiple elements with the role "heading"
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<h1>[39m
+      [0mBy Lawrence Collins[0m
+    [36m</h1>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<h3>[39m
+      [0mDouble Half[0m
+    [36m</h3>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<h3>[39m
+      [0mChoose Team[0m
+    [36m</h3>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<h3>[39m
+      [0mColored Box[0m
+    [36m</h3>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<h3>[39m
+      [0mShove Box[0m
+    [36m</h3>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"App-header"[39m
+            [33mstyle[39m=[32m"background: green;"[39m
+          [36m>[39m
+            [0mUD CISC275 with React Hooks and TypeScript[0m
+          [36m</header>[39m
+          [36m<h1>[39m
+            [0mBy Lawrence Collins[0m
+          [36m</h1>[39m
+          [36m<img[39m
+            [33malt[39m=[32m"Magic Johnson after winning the NBA Championship"[39m
+            [33msrc[39m=[32m"\\Users\\Lawrence\\Desktop\\Magic.png"[39m
+          [36m/>[39m
+          [36m<p>[39m
+            [0mStates I have been to[0m
+          [36m</p>[39m
+          [36m<ul>[39m
+            [36m<li>[39m
+              [0mArizona[0m
+            [36m</li>[39m
+            [36m<li>[39m
+              [0mFlorida[0m
+            [36m</li>[39m
+            [36m<li>[39m
+              [0mNew York[0m
+            [36m</li>[39m
+          [36m</ul>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"container"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"row"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"col"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mstyle[39m=[32m"border: 5px solid red; padding: 10px;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"col"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mstyle[39m=[32m"border: 5px solid red; padding: 10px;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<p>[39m
+            [0mLawrence Collins Hello World Edit [0m
+            [36m<code>[39m
+              [0msrc/App.tsx[0m
+            [36m</code>[39m
+            [0m and save. This page will automatically reload.[0m
+          [36m</p>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0m [0m
+            [0mLog Hello World[0m
+          [36m</button>[39m
+          [36m<hr />[39m
+          [36m<div>[39m
+            [36m<h3>[39m
+              [0mDouble Half[0m
+            [36m</h3>[39m
+            [36m<div>[39m
+              [0mThe current value is: [0m
+              [36m<span>[39m
+                [0m10[0m
+              [36m</span>[39m
+            [36m</div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mDouble[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mHalve[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<div>[39m
+            [36m<h3>[39m
+              [0mChoose Team[0m
+            [36m</h3>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"row"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"col"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
+                [36m>[39m
+                  [0mAdd[0m
+                  [0m [0m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mAlan Turing[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
+                [36m>[39m
+                  [0mAdd[0m
+                  [0m [0m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mGrace Hopper[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
+                [36m>[39m
+                  [0mAdd[0m
+                  [0m [0m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mAda Lovelace[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
+                [36m>[39m
+                  [0mAdd[0m
+                  [0m [0m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mCharles Babbage[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
+                [36m>[39m
+                  [0mAdd[0m
+                  [0m [0m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mBarbara Liskov[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mstyle[39m=[32m"margin-bottom: 4px;"[39m
+                [36m>[39m
+                  [0mAdd[0m
+                  [0m [0m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary btn-sm"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mMargaret Hamilton[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"col"[39m
+              [36m>[39m
+                [36m<strong>[39m
+                  [0mTeam:[0m
+                [36m</strong>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mClear Team[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<div>[39m
+            [36m<h3>[39m
+              [0mColored Box[0m
+            [36m</h3>[39m
+            [36m<span>[39m
+              [0mThe current color is: [0m
+              [0mred[0m
+            [36m</span>[39m
+            [36m<div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-primary"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mNext Color[0m
+              [36m</button>[39m
+              [36m<div[39m
+                [33mdata-testid[39m=[32m"colored-box"[39m
+                [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: red; display: inline-block; vertical-align: bottom; margin-left: 5px;"[39m
+              [36m/>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<div>[39m
+            [36m<h3>[39m
+              [0mShove Box[0m
+            [36m</h3>[39m
+            [36m<div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-primary"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mShove the Box[0m
+              [36m</button>[39m
+              [36m<div[39m
+                [33mdata-testid[39m=[32m"moveable-box"[39m
+                [33mstyle[39m=[32m"width: 50px; height: 50px; background-color: lightblue; border: 1px solid blue; display: inline-block; vertical-align: bottom; margin-left: 10px;"[39m
+              [36m/>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<span>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdd One[0m
+            [36m</button>[39m
+            [0mto [0m
+            [0m0[0m
+          [36m</span>[39m
+          [36m<hr />[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0m Reveal Answer[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<hr />[39m
+          [36m<hr />[39m
+          [36m<hr />[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+       7 |     test("There is a header", () => {
+       8 |         render(<App />);
+    >  9 |         const header = screen.getByRole("heading");
+         |                               ^
+      10 |         expect(header).toBeInTheDocument();
+      11 |     });
+      12 |
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:25:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:29:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:66:13
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/HtmlCss.test.tsx:9:31)
+
+PASS src/functions.test.ts
+FAIL src/components/CycleHoliday.test.tsx
+  ● CycleHoliday Component tests › Can cycle through 5 distinct holidays alphabetically
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "Christmas"
+    Received string:    " Current Holiday: 🪔"
+
+      42 |                 /Current Holiday: (.*)/i
+      43 |             ).textContent;
+    > 44 |             expect(currentHolidayText).toContain(holidays[i]);
+         |                                        ^
+      45 |         }
+      46 |     });
+      47 |
+
+      at Object.<anonymous> (src/components/CycleHoliday.test.tsx:44:40)
+
+  ● CycleHoliday Component tests › Can cycle through 5 distinct holidays in reverse order
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "New Year's Day"
+    Received string:    " Current Holiday: 🪔"
+
+      64 |                 /Current Holiday: (.*)/i
+      65 |             ).textContent;
+    > 66 |             expect(currentHolidayText).toContain(holidays[i]);
+         |                                        ^
+      67 |         }
+      68 |     });
+      69 | });
+
+      at Object.<anonymous> (src/components/CycleHoliday.test.tsx:66:40)
+
+FAIL src/components/ChangeType.test.tsx
+  ● ChangeType Component tests › The initial type is Short Answer
+
+    TestingLibraryElementError: Unable to find an element with the text: /Short Answer/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div />[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+       9 |     test("The initial type is Short Answer", () => {
+      10 |         // We use `getByText` because the text MUST be there
+    > 11 |         const typeText = screen.getByText(/Short Answer/i);
+         |                                 ^
+      12 |         expect(typeText).toBeInTheDocument();
+      13 |     });
+      14 |     test("The initial type is not Multiple Choice", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/ChangeType.test.tsx:11:33)
+
+  ● ChangeType Component tests › There is a button labeled Change Type
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Change Type/i`
+
+    There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div />[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      19 |
+      20 |     test("There is a button labeled Change Type", () => {
+    > 21 |         const changeTypeButton = screen.getByRole("button", {
+         |                                         ^
+      22 |             name: /Change Type/i
+      23 |         });
+      24 |         expect(changeTypeButton).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/ChangeType.test.tsx:21:41)
+
+  ● ChangeType Component tests › Clicking the button changes the type.
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Change Type/i`
+
+    There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div />[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      26 |
+      27 |     test("Clicking the button changes the type.", () => {
+    > 28 |         const changeTypeButton = screen.getByRole("button", {
+         |                                         ^
+      29 |             name: /Change Type/i
+      30 |         });
+      31 |         changeTypeButton.click();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/ChangeType.test.tsx:28:41)
+
+  ● ChangeType Component tests › Clicking the button twice keeps the type the same.
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Change Type/i`
+
+    There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div />[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      39 |
+      40 |     test("Clicking the button twice keeps the type the same.", () => {
+    > 41 |         const changeTypeButton = screen.getByRole("button", {
+         |                                         ^
+      42 |             name: /Change Type/i
+      43 |         });
+      44 |         changeTypeButton.click();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/ChangeType.test.tsx:41:41)
+
+PASS src/components/Counter.test.tsx
+PASS src/components/RevealAnswer.test.tsx
+PASS src/bad-components/ShoveBox.test.tsx
+PASS src/bad-components/ColoredBox.test.tsx
+  ● Console
+
+    console.log
+      red
+
+      at ColorPreview (src/bad-components/ColoredBox.tsx:25:13)
+
+    console.log
+      red
+
+      at ColorPreview (src/bad-components/ColoredBox.tsx:25:13)
+
+    console.log
+      red
+
+      at ColorPreview (src/bad-components/ColoredBox.tsx:25:13)
+
+    console.log
+      blue
+
+      at ColorPreview (src/bad-components/ColoredBox.tsx:25:13)
+
+    console.log
+      green
+
+      at ColorPreview (src/bad-components/ColoredBox.tsx:25:13)
+
+    console.log
+      red
+
+      at ColorPreview (src/bad-components/ColoredBox.tsx:25:13)
+
+PASS src/text.test.tsx
+  ● Console
+
+    console.log
+      red
+
+      at ColorPreview (src/bad-components/ColoredBox.tsx:25:13)
+
+PASS src/App.test.tsx
+  ● Console
+
+    console.log
+      red
+
+      at ColorPreview (src/bad-components/ColoredBox.tsx:25:13)
+
+--------------------|---------|----------|---------|---------|-------------------
+File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+--------------------|---------|----------|---------|---------|-------------------
+All files           |    99.6 |    94.11 |     100 |   99.57 |                   
+ src                |   99.43 |    95.77 |     100 |   99.39 |                   
+  App.tsx           |     100 |      100 |     100 |     100 |                   
+  arrays.ts         |     100 |      100 |     100 |     100 |                   
+  functions.ts      |     100 |      100 |     100 |     100 |                   
+  nested.ts         |     100 |    95.23 |     100 |     100 | 249               
+  objects.ts        |   97.22 |    85.71 |     100 |   97.22 | 38                
+ src/bad-components |     100 |       50 |     100 |     100 |                   
+  ChooseTeam.tsx    |     100 |       50 |     100 |     100 | 18                
+  ColoredBox.tsx    |     100 |      100 |     100 |     100 |                   
+  DoubleHalf.tsx    |     100 |      100 |     100 |     100 |                   
+  ShoveBox.tsx      |     100 |      100 |     100 |     100 |                   
+ src/components     |     100 |    91.66 |     100 |     100 |                   
+  ChangeType.tsx    |     100 |      100 |     100 |     100 |                   
+  Counter.tsx       |     100 |      100 |     100 |     100 |                   
+  CycleHoliday.tsx  |     100 |      100 |     100 |     100 |                   
+  RevealAnswer.tsx  |     100 |      100 |     100 |     100 |                   
+  StartAttempt.tsx  |     100 |       75 |     100 |     100 | 9                 
+  TwoDice.tsx       |     100 |      100 |     100 |     100 |                   
+ src/interfaces     |       0 |        0 |       0 |       0 |                   
+  answer.ts         |       0 |        0 |       0 |       0 |                   
+  question.ts       |       0 |        0 |       0 |       0 |                   
+--------------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 5 failed, 12 passed, 17 total
+Tests:       13 failed, 104 passed, 117 total
 Snapshots:   0 total
-Time:        5.458 s
+Time:        11.279 s
 Ran all test suites.
